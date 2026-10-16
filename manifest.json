@@ -1,12 +1,12 @@
 {
   "id": "observability",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Headless observability service; no Web or graphical host required.",
   "metadata": {
     "ui": {
       "id": "dev.delta.observability",
       "name": "Delta Observability",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "contract": "^1.5.0",
       "description": "Headless observability service; no Web or graphical host required.",
       "publisher": "Delta",

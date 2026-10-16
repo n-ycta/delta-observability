@@ -13,4 +13,4 @@ export async function setupObservability(client){
  'observability.status':async()=>{const a=monitor.status();return{settings:{},activity:{...a,rateLabel:{en:'records/min',ru:'записей/мин'}},notices:a.error?[{id:'telemetry',severity:'warn',message:'Node telemetry cannot be persisted to Storage.',localizations:{ru:'История узлов не записывается: проверьте хранилище.'}}]:[]}}
  },stop:async()=>{stopMonitor();stopEvents();await events.queue}};
 }
-if(process.argv[1]&&import.meta.url===(await import('node:url')).pathToFileURL(process.argv[1]).href)await runtime(setupObservability);
+if(process.env.DELTA_COMPONENT_ID==='observability'||process.argv[1]&&import.meta.url===(await import('node:url')).pathToFileURL(process.argv[1]).href)await runtime(setupObservability);
