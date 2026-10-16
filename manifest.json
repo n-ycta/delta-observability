@@ -1,0 +1,94 @@
+{
+  "id": "observability",
+  "version": "0.1.0",
+  "description": "Headless observability service; no Web or graphical host required.",
+  "metadata": {
+    "ui": {
+      "id": "dev.delta.observability",
+      "name": "Delta Observability",
+      "version": "0.1.0",
+      "contract": "^1.5.0",
+      "description": "Headless observability service; no Web or graphical host required.",
+      "publisher": "Delta",
+      "icon": "activity",
+      "category": "system",
+      "runtime": {
+        "targets": [
+          "desktop",
+          "vps",
+          "container"
+        ]
+      },
+      "capabilities": [
+        "actions"
+      ],
+      "metrics": [],
+      "repository": "https://github.com/n-ycta/delta-observability",
+      "permissions": [
+        {
+          "scope": "admin",
+          "reason": "Trusted executable service; OS sandboxing is not provided.",
+          "optional": false
+        }
+      ],
+      "dependencies": [
+        {
+          "kind": "core",
+          "version": ">=0.4.3, <0.5.0",
+          "required": true,
+          "id": "core"
+        }
+      ],
+      "endpoints": {
+        "status": "observability.status"
+      }
+    }
+  },
+  "capabilities": [
+    {
+      "name": "query",
+      "params": {
+        "query": {
+          "type": "object",
+          "required": true
+        }
+      },
+      "admin": false,
+      "description": "Observability API: query",
+      "localizations": {
+        "ru": {
+          "description": "\u0417\u0430\u043f\u0440\u043e\u0441\u0438\u0442\u044c \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435 \u0440\u044f\u0434\u044b \u043c\u0435\u0442\u0440\u0438\u043a"
+        }
+      }
+    },
+    {
+      "name": "history",
+      "params": {},
+      "admin": false,
+      "description": "Observability API: history"
+    },
+    {
+      "name": "uptime",
+      "params": {},
+      "admin": false,
+      "description": "Observability API: uptime"
+    },
+    {
+      "name": "events",
+      "params": {},
+      "admin": false,
+      "description": "Observability API: events"
+    },
+    {
+      "name": "status",
+      "params": {},
+      "description": "Observability API: status",
+      "admin": false
+    },
+    {
+      "name": "audit",
+      "admin": false,
+      "params": {}
+    }
+  ]
+}
